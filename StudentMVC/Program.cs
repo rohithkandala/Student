@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using StudentMVC.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
