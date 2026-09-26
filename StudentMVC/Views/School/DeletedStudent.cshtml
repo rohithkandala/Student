@@ -1,0 +1,91 @@
+﻿
+
+
+@model IEnumerable<StudentMVC.Models.DeletedStudents>
+
+
+@{
+    ViewData["Title"] = "DeletedStudent";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DeletedStudent</title>
+</head>
+<body>
+
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-4">
+                <h4 class="text-primary">Give Student Name  As Input</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+    <form action="DeletedStudent" method="post">
+            <div class="form-group p-1 mt-2">
+                <label for="studentName" class="control-label mb-3">StudentName:</label>
+                <input type="text" id="studentName" name="studentName" class="form-control" />
+        </div>
+            <div class="form-group p-1 mt-2">
+                <button type="submit" value="DeletedStudent" class="btn btn-secondary" style="width:150px">Submit</button>
+        </div>
+    </form>
+    </div>
+
+@if (!Model.Any())
+{
+        <h5>
+            The Student Name is not deleted check Student Table
+        </h5>
+    }
+    else
+{
+
+        <div class="container p-3">
+            <div class="row pt-4">
+                <div class="col-4">
+                    <h4 class="text-primary">Deleted Student</h4>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped box-shadow" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Marks)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClassName)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Marks)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClassName)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+   }
+</body>
+</html>
+

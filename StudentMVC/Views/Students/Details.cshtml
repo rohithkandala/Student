@@ -1,0 +1,30 @@
+﻿@model StudentMVC.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Details</h2>
+        </div>
+    </div>
+</div>
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.StudentId" class="btn btn-primary" style="width:150px">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+
+</div>

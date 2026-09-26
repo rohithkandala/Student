@@ -1,0 +1,115 @@
+﻿@model IEnumerable<StudentMVC.Models.Scorecard>
+
+
+@{
+    ViewData["Title"] = "ScoreCard";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ScoreCard</title>
+</head>
+<body>
+
+
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-4">
+                <h4 class="text-primary">Give Student Name  As Input</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+<form action="ScoreCard" method="post">
+            <div class="form-group p-1 mt-2">
+                <label for="studentName" class="control-label mb-3">Student Name:</label>
+                <input type="text" id="studentName" name="studentName" class="form-control" />
+    </div>
+            <div class="form-group p-1 mt-2">
+            <button type="submit" value="ScoreCard" class="btn btn-secondary" style="width:150px">Submit</button>
+            </div>
+</form>
+</div>
+
+</body>
+</html>
+
+ <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-4">
+                <h4 class="text-primary">Score Card</h4>
+            </div>
+        </div>
+    </div>
+
+<table class="table table-bordered table-striped box-shadow" style="width:100%">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StudentName)
+                </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Java)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DBMS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MSSQL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CSharp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Angular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.React)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Python)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Java)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DBMS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MSSQL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CSharp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Angular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.React)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Python)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+

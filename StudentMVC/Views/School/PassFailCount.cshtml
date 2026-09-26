@@ -1,0 +1,44 @@
+﻿@model IEnumerable<StudentMVC.Models.PassFailCount>
+
+@{
+    ViewData["Title"] = "PassFailCount";
+}
+<div class="container p-3">
+    <div class="row pt-3">
+        <div class="col-4">
+            <h2 class="text-primary">PassFail Count</h2>
+        </div>
+       </div>
+  
+
+    <table class="table table-bordered table-striped box-shadow" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Failed)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td width="40%">
+                    @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td width="30%">
+                @Html.DisplayFor(modelItem => item.Passed)
+            </td>
+            <td width="30%">
+                @Html.DisplayFor(modelItem => item.Failed)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

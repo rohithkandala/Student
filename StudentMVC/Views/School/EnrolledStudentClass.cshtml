@@ -1,0 +1,58 @@
+﻿@model StudentMVC.Models.EnrolledStudentClass
+
+
+@{
+    ViewData["Title"] = "EnrolledStudentClass";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EnrolledStudentClass</title>
+</head>
+<body>
+
+
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-4">
+                <h2 class="text-primary">Give Student Name </h2>
+            </div>
+            </div>
+        </div>
+
+
+
+
+    <div class="col-md-4">
+    <form action="EnrolledStudentClass" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div class="form-group p-1 mt-2">
+                <label for="studentName" class="control-label mb-3"><h5>Student Name:</h5></label>
+                <input type="text" id="studentName" name="studentName" class="form-control" />
+                <span asp-validation-for="NoOfClassesEnrolledByStudent" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group p-1 mt-2">
+                <button type="submit" value="EnrolledStudentClass" class="btn btn-secondary" style="width:150px">Submit</button>
+            </div>
+    </form>
+    </div>
+   
+
+<div class="mt-5">
+    <h3>EnrolledStudentClass</h3>
+
+
+    @if (Model != null)
+    {
+            <p><h5>No Of Classes Enrolled By Student : @Model.NoOfClassesEnrolledByStudent</h5></p>
+    }
+    else
+    {
+        <p>NoOfClassesEnrolledByStudent not available.</p>
+    }
+    </div>
+
+</body>
+</html>
